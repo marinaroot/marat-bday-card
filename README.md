@@ -20,6 +20,11 @@ Running this app
   npm start
   ```
 
+6. To build and deploy
+  ```bash
+  npm run build
+  ```
+  Then follow instructions in the command line
 
 Building blocks
 ---------------
