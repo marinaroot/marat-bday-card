@@ -6,7 +6,6 @@ class ObfuscatedMessage extends Component {
   render() {
     const {
       ageIsCorrect,
-      style
     } = this.props;
 
     return (

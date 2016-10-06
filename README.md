@@ -10,11 +10,21 @@ Running this app
 
 3. Navigate to project directory
 
-4. Type `npm start`
+4. Install NPM dependencies
+  ```bash
+  npm install
+  ```
+
+5. Launch the app
+  ```bash
+  npm start
+  ```
+
 
 Building blocks
 ---------------
 
+* HTML, CSS, JavaScript (ES2015)
 * [React](http://facebook.github.io/react/)
 * [create-react-app](https://github.com/facebookincubator/create-react-app)
 * [Material UI](http://www.material-ui.com/)

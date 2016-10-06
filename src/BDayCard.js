@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { RaisedButton, AppBar } from 'material-ui';
+import {
+  Card,
+  CardActions,
+  CardText,
+  FlatButton,
+  RaisedButton,
+  TextField,
+} from 'material-ui';
 import ObfuscatedMessage from './ObfuscatedMessage';
 
 import { MARATS_AGE } from './constants';
@@ -16,9 +23,12 @@ class BDayCard extends Component {
   }
 
   onSubmitAgeClick() {
-    this.state = {
-      age: null
-    };
+    const rawAge = this.refs['input-with-age'].getValue();
+    const age = rawAge * 1; // string -> int
+    console.log('submit age clicked');
+    this.setState({
+      age,
+    });
   }
 
   onResetClick() {
@@ -34,16 +44,39 @@ class BDayCard extends Component {
     } = this.state;
 
     if (age === null) {
-      return <div>hi</div>
-    } else {
-      return <div className="message-container">
-        <ObfuscatedMessage ageIsCorrect={age === MARATS_AGE} />
-        <div className="BDayCard__return-button-container">
-          <RaisedButton primary={true} onClick={this.onResetClick}>
-            назад
-          </RaisedButton>
+      return (
+        <div className="BDayCard__form-container">
+          <Card zDepth={2}>
+            <CardText>
+              <TextField
+                ref="input-with-age"
+                hintText="цифрами"
+                floatingLabelText="Введите ваш возраст"
+              />
+            </CardText>
+            <CardActions>
+              <RaisedButton
+                primary={true}
+                onClick={this.onSubmitAgeClick}
+                label="ввёл"
+              />
+            </CardActions>
+          </Card>
         </div>
-      </div>
+      )
+    } else {
+      return (
+        <div className="message-container">
+          <ObfuscatedMessage ageIsCorrect={age === MARATS_AGE} />
+          <div className="BDayCard__return-button-container">
+            <FlatButton
+              primary={true}
+              onClick={this.onResetClick}
+              label="назад"
+            />
+          </div>
+        </div>
+      )
     }
   }
 

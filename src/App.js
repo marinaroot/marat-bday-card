@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 
 // Material UI
-import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { RaisedButton, AppBar } from 'material-ui';
+import { AppBar } from 'material-ui';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import BDayCard from './BDayCard';
@@ -19,7 +17,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div className="App">
-          <AppBar title="BDay card"></AppBar>
+          <AppBar title="Марату на день рождения"></AppBar>
           <BDayCard />
         </div>
       </MuiThemeProvider>
